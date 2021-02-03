@@ -1,0 +1,52 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#addModal"
+    >
+      Add
+    </button>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table
+        class="table table-bordered"
+        id="dataTable"
+        width="100%"
+        cellspacing="0"
+      >
+        <thead>
+          <tr>
+            <th>no</th>
+            <th>Nama Bank</th>
+            <th>Nomor rekening</th>
+            <th>Nama pemilik</th>
+            <th>image</th>
+            <th>Action</th>
+          </tr>
+          <tbody>
+             <% for(let i =0;i<bank.length;i++) {%>
+            <tr>
+             <td> <%= i+1 %></td>
+             <td> <%= bank[i].nameBank %></td>
+             <td> <%= bank[i].nomorRekening %></td>
+             <td> <%= bank[i].Name %></td>
+             <td> <img src="http://localhost:3003/<%=bank[i].ImageUrl%>" style="height:75px; width: 75px;" alt="<%= bank[i].nameBank %>" > </td>
+             <td>
+               <form action="/admin/bank/<%= bank[i].id %>?_method=DELETE" method="post">
+                  <a href="javascript:void()" type="button" class="btn btn-warning btn-circle btn-sm button-update" data-name="<%= bank[i].Name %>"
+                    data-namebank="<%= bank[i].nameBank %>"  data-nomorrekening="<%= bank[i].nomorRekening %>"
+                  data-id="<%= bank[i].id %>">  <i class="fas  fa-edit"></i></a>
+                  <button type="submit" class="btn btn-danger btn-circle btn-sm">  <i class="fas  fa-trash"></i></button>
+               </form>
+              </td>
+            </tr>
+          <%} %>
+          </tbody>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
