@@ -23,8 +23,9 @@
             <th>Name</th>
             <th>Action</th>
           </tr>
-          <tbody>
-            <% for(let i =0;i<category.length;i++) {%>
+        </thead>
+        <tbody>
+          <% for(let i =0;i<category.length;i++) {%>
             <tr>
              <td> <%= i+1 %></td>
              <td> <%= category[i].name %></td>
@@ -36,8 +37,7 @@
               </td>
             </tr>
           <%} %>
-          </tbody>
-        </thead>
+        </tbody>
       </table>
     </div>
   </div>

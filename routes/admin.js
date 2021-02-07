@@ -1,25 +1,30 @@
 const router = require("express").Router();
 const AdminController = require("../Controller/AdminController");
 const { uploadSingle, uploadMultiple } = require("../middleware/multer");
+const auth = require("../middleware/auth");
+router.get("/signin", AdminController.viewSignin);
+router.post("/signin", AdminController.actionSignin);
+// router.use(auth);
+router.get("/logout", AdminController.actionLogout);
 router.get("/dashboard", AdminController.viewDashboard);
 //category
 router.get("/Category", AdminController.viewCategory);
 router.post("/Category", AdminController.addCategory);
 router.put("/Category", AdminController.editCategory);
 router.delete("/Category/:id", AdminController.deleteCategory);
-//bank
+// //bank
 router.get("/Bank", AdminController.viewBank);
 router.post("/Bank", uploadSingle, AdminController.addBank);
 router.put("/Bank", uploadSingle, AdminController.editBank);
 router.delete("/Bank/:id", AdminController.deleteBank);
-//item
+// //item
 router.get("/Item", AdminController.viewItem);
 router.post("/Item", uploadMultiple, AdminController.addItem);
 router.get("/Item/show-image/:id", AdminController.showImageItem);
 router.get("/Item/:id", AdminController.showEditItem);
 router.put("/Item/:id", uploadMultiple, AdminController.editItem);
 router.delete("/Item/:id", AdminController.deleteItem);
-//detail item
+// //detail item
 router.get("/Item/show-detail-item/:itemId", AdminController.viewDetailItem);
 router.post(
   "/Item/view-detail-item/add/feature/",
@@ -44,5 +49,7 @@ router.put(
 );
 router.delete("/item/:itemId/activity/:id", AdminController.deleteActivity);
 router.get("/booking", AdminController.viewBooking);
-
+router.get("/booking/:id", AdminController.showDetailBooking);
+router.put("/booking/:id/confirmation", AdminController.actionConfirm);
+router.put("/booking/:id/reject", AdminController.actionReject);
 module.exports = router;

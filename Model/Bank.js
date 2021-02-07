@@ -8,11 +8,11 @@ const BankSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  Name: {
+  name: {
     type: String,
     required: true,
   },
-  ImageUrl: {
+  imageUrl: {
     type: String,
     required: true,
   },

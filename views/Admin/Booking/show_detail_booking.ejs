@@ -1,0 +1,32 @@
+<%-include('../../partial/Header.ejs')%>
+<!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <%-include('../../partial/Sidebar.ejs')%>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+      <!-- Topbar -->
+      <%-include('../../partial/Navbar.ejs')%>
+
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <%-include('../../partial/Message.ejs')%>
+        <!-- Page Heading -->
+        <h1 class="h3 mb-4 text-gray-800">Details Booking</h1>
+        <%-include('show_table_detail_booking')%>
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <%-include('../../partial/Footer.ejs')%>
+  </div>
+</div>
+<%-include('../../partial/js.ejs')%>

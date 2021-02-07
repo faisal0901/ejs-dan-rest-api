@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 
 // Connect to MongoDB via Mongoose
 seeder.connect(
-  "mongodb://127.0.0.1:27017/db_staycation",
+  "mongodb://localhost:27017/DB-staycation",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -13,16 +13,16 @@ seeder.connect(
   function () {
     // Load Mongoose models
     seeder.loadModels([
-      "./models/Category",
-      "./models/Bank",
-      "./models/Item",
-      "./models/Feature",
-      "./models/Activity",
-      "./models/Member",
-      "./models/Image",
-      "./models/Member",
-      "./models/Booking",
-      "./models/Users",
+      "./Model/Category",
+      "./Model/Bank",
+      "./Model/Item",
+      "./Model/Feature",
+      "./Model/Activity",
+      "./Model/Member",
+      "./Model/Image",
+      "./Model/Member",
+      "./Model/Booking",
+      "./Model/Users",
     ]);
 
     // Clear specified collections

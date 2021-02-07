@@ -32,8 +32,8 @@
              <td> <%= i+1 %></td>
              <td> <%= bank[i].nameBank %></td>
              <td> <%= bank[i].nomorRekening %></td>
-             <td> <%= bank[i].Name %></td>
-             <td> <img src="http://localhost:3003/<%=bank[i].ImageUrl%>" style="height:75px; width: 75px;" alt="<%= bank[i].nameBank %>" > </td>
+             <td> <%= bank[i].name %></td>
+             <td> <img src="http://localhost:3003/<%=bank[i].imageUrl%>" style="height:75px; width: 75px;" alt="<%= bank[i].nameBank %>" > </td>
              <td>
                <form action="/admin/bank/<%= bank[i].id %>?_method=DELETE" method="post">
                   <a href="javascript:void()" type="button" class="btn btn-warning btn-circle btn-sm button-update" data-name="<%= bank[i].Name %>"

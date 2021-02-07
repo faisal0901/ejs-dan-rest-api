@@ -6,14 +6,15 @@ const UsersSchema = new mongoose.Schema({
     required: true,
   },
   password: {
-    type: Number,
+    type: String,
     required: true,
   },
 });
 UsersSchema.pre("save", async function (next) {
   const user = this;
+  console.log(this);
   if (user.isModified("password")) {
     user.password = await bcrypt.hash(user.password, 8);
   }
 });
-module.exports = mongoose.model("Users", BankSchema);
+module.exports = mongoose.model("Users", UsersSchema);
