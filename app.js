@@ -7,12 +7,15 @@ const methodOveride = require("method-override");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("connect-flash");
-mongoose.connect("mongodb://localhost:27017/DB-staycation", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  "mongodb+srv://staycation:faisalf0901@cluster0.9gdfz.mongodb.net/db-staycation?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const AdminRouter = require("./routes/admin");

@@ -67,7 +67,7 @@
              <td> <%= feature[i].name %></td>
              <td> <%= feature[i].qty %></td>
 
-             <td> <img src="http://localhost:3003/<%=feature[i].imageUrl%>" style="height:75px; width: 75px;" alt="<%= feature[i].namefeature %>" > </td>
+             <td> <img src="https://ejsrestapi.herokuapp.com//<%=feature[i].imageUrl%>" style="height:75px; width: 75px;" alt="<%= feature[i].namefeature %>" > </td>
              <td>
                <form action="/admin/item/<%= feature[i]._id %>/feature/<%= feature[i]._id %>?_method=DELETE" method="post">
                   <a href="javascript:void()" type="button" class="btn btn-warning btn-circle btn-sm btn-update" data-name="<%= feature[i].name %>"
