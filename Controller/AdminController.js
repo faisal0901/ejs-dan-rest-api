@@ -27,9 +27,9 @@ module.exports = {
   actionSignin: async (req, res) => {
     try {
       const { username, password } = req.body;
-      console.log(req);
+
       const user = await Users.findOne({ username: username });
-      console.log(user);
+
       if (!user) {
         req.flash("alertMassage", `user yang anda masukan tidak ada`);
         req.flash("alertStatus", "danger");
@@ -90,7 +90,7 @@ module.exports = {
     try {
       console.log(req.body);
       const { name } = req.body;
-      console.log(name);
+
       await Category.create({ name });
       req.flash("alertMassage", "success add Category");
       req.flash("alertStatus", "success");
@@ -151,9 +151,9 @@ module.exports = {
   editBank: async (req, res) => {
     try {
       const { id, Name, nameBank, nomorRekening } = req.body;
-      console.log(id + Name + nameBank);
+
       const bank = await Bank.findOne({ _id: id });
-      console.log(bank);
+
       if (req.file == undefined) {
         bank.Name = Name;
         bank.nameBank = nameBank;
@@ -432,7 +432,7 @@ module.exports = {
         imageUrl: `images/${req.file.filename}`,
       };
       const id = await Feature.create(feature);
-      console.log(id);
+
       const item = await Item.findOne({ _id: itemId });
       item.featureId.push({ _id: id._id });
       await item.save();
@@ -578,7 +578,7 @@ module.exports = {
       const booking = await Booking.find()
         .populate("memberId")
         .populate("bankId");
-      console.log(booking);
+
       res.render("Admin/Booking/view_booking", {
         title: "staycation |Booking",
         booking,
