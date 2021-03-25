@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const methodOveride = require("method-override");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -33,6 +34,7 @@ app.use(
     cookie: { maxAge: 600000000000 },
   })
 );
+app.use(cors());
 app.use(flash());
 app.use(logger("dev"));
 app.use(methodOveride("_method"));
